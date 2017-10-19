@@ -28,38 +28,38 @@ public class UserInfo
 	}
 
 	public String validate() 
-	{
+	{//returns null if valid otherwise returns parameter that it failed at.
 		if(firstName == null || firstName.toCharArray().length > 45 || firstName == "")
 		{
-			return firstName;
+			return "firstName";
 		}
 		if(lastName == null || lastName.toCharArray().length > 45 || lastName == "")
 		{
-			return lastName;
+			return "lastName";
 		}
 		if(address1 == null || address1.toCharArray().length > 100 || address1 == "")
 		{
-			return address1;
+			return "address1";
 		}
 		if(address2.toCharArray().length > 100)
 		{
-			return address2;
+			return "address2";
 		}
 		if(city == null || city.toCharArray().length > 60 || city == "")
 		{
-			return city;
+			return "city";
 		}
 		if(state == null || state.toCharArray().length > 2 || state == "")
 		{
-			return state;
+			return "state";
 		}
 		if(zip == null || zip.toCharArray().length > 10 || zip == "" || !zip.matches("[0-9]+"))
 		{
-			return zip;
+			return "zip";
 		}
 		if(country == null || country.toCharArray().length > 55 || country == "")
 		{
-			return country;
+			return "country";
 		}
 		
 		return null;

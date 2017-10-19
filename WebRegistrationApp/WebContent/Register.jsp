@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <%
+	Object errorFocus = request.getParameter("errorFocus");
 	Object fName = request.getParameter("first_name");
 	if (fName == null)
 		fName = "";
@@ -33,6 +34,7 @@
 		country = "";
 	Date date = new Date();
 	SimpleDateFormat ft = new SimpleDateFormat("yyyy/MM/dd 'at' hh:mm:ss a zzz");
+	
 %>
 <title>Register</title>
 </head>
@@ -63,7 +65,9 @@
 				maxlength="55" style="text-align: center;" required
 				value="<%=country%>"><br> Date(YYYY/MM/DD):<br>
 			<%=ft.format(date)%><br> <br> <input type="submit"
-				name="submit">
+				name="submit" onClick="ShowHide()"> <br>
+			<br>
+			
 		</form>
 	</div>
 </body>

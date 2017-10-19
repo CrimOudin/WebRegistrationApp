@@ -49,6 +49,7 @@ public class WebRegistrationApp extends HttpServlet {
 	        {
 	        	UserInfo userInfo = null;
 	    		try {
+	    			System.out.println("userInfo validation");
 	    			userInfo = new UserInfo(fName.toString(), lName.toString(), address1.toString(), address2.toString(),
 	    					city.toString(), state.toString(), zip.toString(), country.toString(), ft.format(date));
 	    			if (userInfo.validate() == null) {
@@ -57,9 +58,45 @@ public class WebRegistrationApp extends HttpServlet {
 	    				RequestDispatcher RequestsDispatcherObj = request.getRequestDispatcher("/ThankYou.jsp");
 	    		        RequestsDispatcherObj.forward(request, response);    
 	    			}
-	    			else if(userInfo.validate() == "firstName")
+	    			else if(userInfo.validate().equals("firstName"))
 	    			{
-	    				//((Object) fName).focus();
+	    				request.setAttribute("errorFocus", "first_Name");
+	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
+	    			}
+	    			else if(userInfo.validate() == "lastName")
+	    			{
+	    				request.setAttribute("errorFocus", "last_Name");
+	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
+	    			}
+	    			else if(userInfo.validate() == "address1")
+	    			{
+	    				request.setAttribute("errorFocus", "address1");
+	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
+	    			}
+	    			else if(userInfo.validate() == "address2")
+	    			{
+	    				request.setAttribute("errorFocus", "address2");
+	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
+	    			}
+	    			else if(userInfo.validate() == "city")
+	    			{
+	    				request.setAttribute("errorFocus", "city");
+	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
+	    			}
+	    			else if(userInfo.validate() == "state")
+	    			{
+	    				request.setAttribute("errorFocus", "state");
+	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
+	    			}
+	    			else if(userInfo.validate().equals("zip"))
+	    			{
+	    				request.setAttribute("errorFocus", "zip");
+	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
+	    			}
+	    			else if(userInfo.validate() == "country")
+	    			{
+	    				request.setAttribute("errorFocus", "country");
+	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
 	    			}
 	    		} catch (Exception e) {
 
