@@ -7,7 +7,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <%
-	Object errorFocus = request.getParameter("errorFocus");
 	Object fName = request.getParameter("first_name");
 	if (fName == null)
 		fName = "";
@@ -46,9 +45,9 @@
 		<form>
 			First Name:<br> <input type="text" name="first_name" size="60"
 				maxlength="45" style="text-align: center;" required
-				value="<%=fName%>"><br> Last Name:<br> <input
+				value="<%=fName%>" pattern="[A-Za-z\s\.\-]+" title="Only Letters Aa-Zz please and/or symbols . -"><br> Last Name:<br> <input
 				type="text" name="last_name" size="60" maxlength="45"
-				style="text-align: center;" required value="<%=lName%>"><br>
+				style="text-align: center;" required value="<%=lName%>" pattern="[A-Za-z\s\.\-]+" title="Only Letters Aa-Zz please and/or symbols . -"><br>
 			Address 1:<br> <input type="text" name="address1" size="100"
 				maxlength="100" style="text-align: center;" required
 				value="<%=address1%>"><br> Address 2:<br> <input
@@ -56,14 +55,14 @@
 				style="text-align: center;" value="<%=address2%>"><br>
 			City:<br> <input type="text" name="city" size="80"
 				maxlength="60" style="text-align: center;" required
-				value="<%=city%>"><br> State:<br> <input
+				value="<%=city%>" pattern="[A-Za-z\s]+" title="Only Letters Aa-Zz please"><br> State:<br> <input
 				type="text" name="state" size="5" maxlength="2"
-				style="text-align: center;" required value="<%=state%>"><br>
+				style="text-align: center;" required value="<%=state%>" pattern="[A-Z]+" title="Only Letters A-Z please"><br>
 			Zip Code:<br> <input type="text" name="zip" size="30"
-				maxlength="10" style="text-align: center;" required value="<%=zip%>"><br>
+				maxlength="10" style="text-align: center;" required value="<%=zip%>" pattern="[0-9]+" title="Only numbers 0-9 please"><br>
 			Country:<br> <input type="text" name="country" size="75"
 				maxlength="55" style="text-align: center;" required
-				value="<%=country%>"><br> Date(YYYY/MM/DD):<br>
+				value="<%=country%>" pattern="[A-Za-z\s]+" title="Only Letters Aa-Zz please"><br> Date(YYYY/MM/DD):<br>
 			<%=ft.format(date)%><br> <br> <input type="submit"
 				name="submit" onClick="ShowHide()"> <br>
 			<br>

@@ -60,42 +60,34 @@ public class WebRegistrationApp extends HttpServlet {
 	    			}
 	    			else if(userInfo.validate().equals("firstName"))
 	    			{
-	    				request.setAttribute("errorFocus", "first_Name");
 	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
 	    			}
 	    			else if(userInfo.validate() == "lastName")
 	    			{
-	    				request.setAttribute("errorFocus", "last_Name");
 	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
 	    			}
 	    			else if(userInfo.validate() == "address1")
 	    			{
-	    				request.setAttribute("errorFocus", "address1");
 	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
 	    			}
 	    			else if(userInfo.validate() == "address2")
 	    			{
-	    				request.setAttribute("errorFocus", "address2");
 	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
 	    			}
 	    			else if(userInfo.validate() == "city")
 	    			{
-	    				request.setAttribute("errorFocus", "city");
 	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
 	    			}
 	    			else if(userInfo.validate() == "state")
 	    			{
-	    				request.setAttribute("errorFocus", "state");
 	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
 	    			}
 	    			else if(userInfo.validate().equals("zip"))
 	    			{
-	    				request.setAttribute("errorFocus", "zip");
 	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
 	    			}
 	    			else if(userInfo.validate() == "country")
 	    			{
-	    				request.setAttribute("errorFocus", "country");
 	    				request.getRequestDispatcher("/Register.jsp").forward(request, response);
 	    			}
 	    		} catch (Exception e) {

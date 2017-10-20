@@ -29,11 +29,11 @@ public class UserInfo
 
 	public String validate() 
 	{//returns null if valid otherwise returns parameter that it failed at.
-		if(firstName == null || firstName.toCharArray().length > 45 || firstName == "")
+		if(firstName == null || firstName.toCharArray().length > 45 || firstName == "" || !country.matches("[a-zA-Z\\s\\.\\-]+"))
 		{
 			return "firstName";
 		}
-		if(lastName == null || lastName.toCharArray().length > 45 || lastName == "")
+		if(lastName == null || lastName.toCharArray().length > 45 || lastName == "" || !country.matches("[a-zA-Z\\s\\.\\-]+"))
 		{
 			return "lastName";
 		}
@@ -45,11 +45,11 @@ public class UserInfo
 		{
 			return "address2";
 		}
-		if(city == null || city.toCharArray().length > 60 || city == "")
+		if(city == null || city.toCharArray().length > 60 || city == "" || !city.matches("[a-zA-Z\\s]+"))
 		{
 			return "city";
 		}
-		if(state == null || state.toCharArray().length > 2 || state == "")
+		if(state == null || state.toCharArray().length > 2 || state == "" || !state.matches("[A-Z]+"))
 		{
 			return "state";
 		}
@@ -57,7 +57,7 @@ public class UserInfo
 		{
 			return "zip";
 		}
-		if(country == null || country.toCharArray().length > 55 || country == "")
+		if(country == null || country.toCharArray().length > 55 || country == "" || !country.matches("[a-zA-Z\\s]+"))
 		{
 			return "country";
 		}
